@@ -19,10 +19,18 @@ import { Response } from "express"
     OK (res: Response, data:any):Response {
       return res.status(httpStatus.OK).json({
         status: httpStatus.OK,
-        statusMsg: 'Succes',
+        statusMsg: 'Success',
         data: data
       });
     };
+
+    BAD_REQUEST_ERROR(res: Response, data: any): Response {
+      return res.status(httpStatus.BAD_REQUEST_ERROR).json({
+        status: httpStatus.BAD_REQUEST_ERROR,
+        statusMsg: 'Bad Request',
+        error: data,
+      });
+    }
 
     NotFound (res: Response, data:any):Response {
       return res.status(httpStatus.NOT_FOUND).json({
